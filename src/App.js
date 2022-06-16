@@ -1,6 +1,7 @@
 //@ts-check
 
 import './App.css';
+import ItemListContainer from './components/itemsListContainer/ItemListContainer';
 import Navbar from './components/NavBar/Navbar';
 function App() {
 
@@ -8,11 +9,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <header className="App-header">
-        
-        <h1>
-          Editorial GDM
-      </h1>
-        <p>Aguarde un momento, estamos programando.</p>
+        <ItemListContainer greeting="Bienvenido al sitio oficial de Editorial GDM" />
       </header>
     </div>
   );
