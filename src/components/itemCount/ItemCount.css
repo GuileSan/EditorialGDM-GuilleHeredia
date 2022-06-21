@@ -1,0 +1,21 @@
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid rgb(189, 188, 188);
+    border-radius: 5px;
+    max-width: 350px;
+    height: 150px;
+    
+}
+.cantidad {
+    font-size: 2em;
+}
+.botones {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
