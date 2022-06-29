@@ -4,15 +4,14 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import ItemCount from '../itemCount/ItemCount';
+
+import "./Item.css"
 export default function Item({id, price, title, pictureURL}) {
-  function onAdd(valor) {
-    alert("Agregaste " + valor + " productos a tu compra")
-  }
+
   return (
-    <div>
-      <div>
-        <Card sx={{ maxWidth: '350px' }}>
+    <div className="itemContenedor">
+      <div className="tarjeta">
+        <Card sx={{ maxWidth: '350px', maxHeigth: '600px'}}>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -34,9 +33,7 @@ export default function Item({id, price, title, pictureURL}) {
           </CardActionArea>
         </Card>
       </div>
-      <div>
-        <ItemCount initial ={1} stock ={5} onAdd ={onAdd}/>
-      </div>
+      
     </div>
   );
 }

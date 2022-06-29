@@ -1,0 +1,9 @@
+.tarjeta {
+    margin: 5px;
+    
+}
+.itemContenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
