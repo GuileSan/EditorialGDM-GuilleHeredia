@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from '../cartWidget/CartWidget';
 
 const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -126,10 +126,11 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          <CartWidget cantidad={8}/>
+          
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
 export default ResponsiveAppBar;
+<CartWidget cantidad={8}/>

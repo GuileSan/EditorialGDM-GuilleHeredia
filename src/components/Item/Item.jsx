@@ -4,6 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom'
 
 import "./Item.css"
 export default function Item({id, price, title, pictureURL}) {
@@ -30,6 +32,7 @@ export default function Item({id, price, title, pictureURL}) {
                 {price}
               </Typography>
             </CardContent>
+            <Button variant="outlined"><Link to={`/item/${id}`}>Detalle</Link></Button>
           </CardActionArea>
         </Card>
       </div>

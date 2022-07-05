@@ -1,40 +1,47 @@
 import React from 'react'
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import ItemDetail from '../ItemDetail/ItemDetail'
+import {useParams} from 'react-router-dom';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
-const ItemDetailContainer = ({title}) => {
-    const [detail, setDetail] = useState({})
-    const {itemId} = useParams()
+export default function ItemDetailContainer() {
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const[itemProducto, setItemProducto] = useState({});
 
-    useEffect(() =>{
-        let products = [
-            {id: 1, title: "Naruto 04", price: '$500', stock:5, pictureURL: "https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/16519/9786075280677.jpg"},
-            {id: 2, title: "Berserk 03", price: '$650', stock:8, pictureURL: "https://contentv2.tap-commerce.com/v2/file/43494/1172/RCI-PCABERSER03=9786075280462.jpg"},
-            {id: 3, title: "Vagabond 28", price: '$800', stock:3, pictureURL: "https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/3232/9788492449491.jpg"}
-          ];
+    let {idItem} = useParams();
 
-          new Promise((resolve, reject) =>{
-            setTimeout(()=>{
-                resolve(products)
+    useEffect( () =>{
+        let promesaDetail = new Promise((resolve, rej) =>{
+            setTimeout( ()=>{
+                fetch("http://localhost:3000/Data.json")
+                .then((response) =>  response.json())
+                .then((data)=>{
+                    resolve(data);
+                    console.log(data);
+                })
             }, 2000)
-          }).then(res => {
-            const item = res.find((item) => item.id === Number(itemId))
-            setDetail(item)
+        });
 
-          })
-
-    }, [itemId])
-    
-
+        promesaDetail.then((resultado)=>{
+            let aux = resultado.find((elemento)=> elemento.id == idItem)
+            setItemProducto(aux);
+        })
+        .catch((error)=> {
+            setError(true);
+        })
+        .finally(()=>{
+            setLoading(false);
+        })
+    }, [idItem])
 
 
 
   return (
-    <div>
-        <ItemDetail detail={detail}/>
-    </div>
+    <>
+        {loading && "Cargando..."}
+        {error && "Disculpe, hubo un error con el host"}
+        {itemProducto && <ItemDetail itemProducto={itemProducto}/>}
+    </>
   )
 }
-export default ItemDetailContainer

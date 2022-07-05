@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "category": "shonen", 
+        "title": "Naruto 04", 
+        "price": 500, 
+        "stock":5, 
+        "pictureURL": "https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/16519/9786075280677.jpg"},
+    
+    {
+        "id": 2,
+        "category": "fantasia", 
+        "title": "Berserk 03", 
+        "price": 650, 
+        "stock":8,
+        "pictureURL": "https://contentv2.tap-commerce.com/v2/file/43494/1172/RCI-PCABERSER03=9786075280462.jpg"},
+
+    {
+        "id": 3,
+        "category": "adultos",
+        "title": "Vagabond 28", 
+        "price": 800, 
+        "stock":3, 
+        "pictureURL": "https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/3232/9788492449491.jpg"}
+]

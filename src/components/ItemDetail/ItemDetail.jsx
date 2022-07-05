@@ -1,47 +1,60 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import ItemCount from '../itemCount/ItemCount'
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import ItemCount from '../itemCount/ItemCount';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.h5,
+  padding: theme.spacing(1),
+  margin:theme.spacing(0.5),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+const ItemCounter = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.h4,
+    padding: theme.spacing(1),
+    margin:theme.spacing(0),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+  const ItemText = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.h4,
+    padding: theme.spacing(1),
+    margin:theme.spacing(0.5),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
 
 
-const ItemDetail = ({id, price, title, stock, pictureURL}) => {
+
+export default function ItemDetail({itemProducto}) {
     function onAdd(valor) {
         alert("Agregaste " + valor + " productos a tu compra")
       }
   return (
-    <div>
-        <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="300"
-          image={pictureURL}
-          alt={title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h4" component="div">
-            {title}
-          </Typography>
-            <Typography variant="body2" color="text.secondary">
-                {id}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-                {price}
-            </Typography>
-            <Typography gutterBottom variant="h6" component="div">
-                {stock}
-            </Typography>
-            
-        </CardContent>
-      </CardActionArea>
-    </Card>
-        <div>
-        <ItemCount initial ={1} stock ={5} onAdd ={onAdd}/>
-        </div>
-    </div>
-  )
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <div className ="Imagen">
+            <img src={itemProducto.pictureURL} alt={itemProducto.title}/>
+          </div>
+        </Grid>
+        <Grid item xs={6} className="infoProd">
+            <Item>{itemProducto.title}</Item>
+            <ItemCounter>$ {itemProducto.price}</ItemCounter>
+            <ItemCounter className="divCount"><ItemCount stock= {itemProducto.stock} initial={1} onAdd={onAdd} articulo={itemProducto}/></ItemCounter>
+            <ItemText>Stock disponible: {itemProducto.stock}</ItemText>
+
+        </Grid>
+      </Grid>
+    </Box>
+  );
 }
-export default ItemDetail
+
+
+
