@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import ItemCount from '../itemCount/ItemCount';
+import { useState } from 'react';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -33,9 +34,10 @@ const ItemCounter = styled(Paper)(({ theme }) => ({
 
 
 export default function ItemDetail({itemProducto}) {
- 
-    function onAdd(count) {
-        alert("Agregaste " + count + " " + itemProducto.title)
+ const [count, setCount] = useState(0)
+    function onAdd(counter) {
+        alert("Agregaste " + counter + " " + itemProducto.title)
+        setCount(counter);
       }
   return (
     <Box sx={{ flexGrow: 1 }}>
