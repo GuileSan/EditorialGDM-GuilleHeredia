@@ -11,10 +11,11 @@ import { MyCartContext } from './Context/CartContext';
 
 
 function App() {
-//const {cantCart, cart, addItem, removeItem, clear, precioTotal} = useContext(MyCartContext);
+
 
  
   return (
+    <MyCartContext>
     <BrowserRouter>
       <Navbar/>
      <Routes>
@@ -23,6 +24,7 @@ function App() {
       <Route path="/item/:idItem" element={<ItemDetailContainer/>}/>
      </Routes>
     </BrowserRouter>
+    </MyCartContext>
   );
 }
 

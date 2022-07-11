@@ -8,11 +8,9 @@ import { MyCartContext } from './Context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-  <MyCartContext>
+  <React.StrictMode>
     <App />
-  </MyCartContext>
-  
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

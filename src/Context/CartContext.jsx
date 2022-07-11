@@ -20,9 +20,9 @@ export default function CartContext({children}) {
             nuevoCart[indexProducto].quantity = Number(nuevoCart[indexProducto].quantity) + Number(quantity);
             setCart(nuevoCart);
         }else{
-            setCart([...cart, {...item, quantity: quantity}])
+            setCart([...cart, {...item, quantity:quantity}])
         }
-        console.log("cart ", JSON.stringify(cart))
+        
     }
     function removeItem(itemId) {
         setCart(cart.filter((el) => el.id !== itemId))
@@ -43,5 +43,5 @@ export default function CartContext({children}) {
         {children}
     </MyCartContext.Provider>
     </>
-  )
+  );
 }
