@@ -32,7 +32,7 @@ export default function Item({id, price, title, pictureURL}) {
                 {price}
               </Typography>
             </CardContent>
-            <Button variant="outlined"><Link to={`/item/${id}`}>Detalle</Link></Button>
+            <Link to={`/item/${id}`}><Button variant="outlined">Detalle</Button></Link>
           </CardActionArea>
         </Card>
       </div>

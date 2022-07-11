@@ -1,9 +1,9 @@
 import React, { createContext, useEffect, useState } from 'react'
 
 
-export const MyCartContext = createContext();
+export const CartContext = createContext();
 
-export default function CartContext({children}) {
+export default function CartProvider({children}) {
     const [cart, setCart] = useState([]);
     const [cantCart, setCantCart] = useState(0);
     const [precioTotal, setPrecioTotal] = useState(0);
@@ -39,9 +39,9 @@ export default function CartContext({children}) {
 
   return (
     <>
-    <MyCartContext.Provider value={{cantCart, cart, addItem, removeItem, clear, precioTotal}}>
+    <CartContext.Provider value={{cantCart, cart, addItem, removeItem, clear, precioTotal}}>
         {children}
-    </MyCartContext.Provider>
+    </CartContext.Provider>
     </>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState} from 'react'
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import "./ItemCount.css";
+import {Link} from 'react-router-dom'
 
 export default function ItemCount ({initial, stock, onAdd}) {
 
@@ -26,7 +27,7 @@ export default function ItemCount ({initial, stock, onAdd}) {
              <div className="cantidad">{count}</div>
             <div><Button variant="contained" onClick ={() => sumar()}>+</Button></div>
             <div><Button variant="contained" onClick ={() => onAdd(count)}>Add to Cart</Button></div>
-            <div><Button variant="contained" >Finalizar compra</Button></div>
+            <div><Link to={'/cart'}><Button variant="contained" >Finalizar compra</Button></Link></div>
         </div>
       
     </div>
