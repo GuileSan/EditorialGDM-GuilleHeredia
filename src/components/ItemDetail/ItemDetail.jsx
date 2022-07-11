@@ -33,8 +33,9 @@ const ItemCounter = styled(Paper)(({ theme }) => ({
 
 
 export default function ItemDetail({itemProducto}) {
-    function onAdd(valor) {
-        alert("Agregaste " + valor + " productos a tu compra")
+ 
+    function onAdd(count) {
+        alert("Agregaste " + count + " " + itemProducto.title)
       }
   return (
     <Box sx={{ flexGrow: 1 }}>

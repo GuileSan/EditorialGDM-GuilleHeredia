@@ -125,7 +125,7 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
           </Box>
-
+        <CartWidget/>
           
         </Toolbar>
       </Container>
@@ -133,4 +133,3 @@ const ResponsiveAppBar = () => {
   );
 };
 export default ResponsiveAppBar;
-<CartWidget cantidad={8}/>

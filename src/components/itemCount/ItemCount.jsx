@@ -26,6 +26,7 @@ export default function ItemCount ({initial, stock, onAdd}) {
              <div className="cantidad">{count}</div>
             <div><Button variant="contained" onClick ={() => sumar()}>+</Button></div>
             <div><Button variant="contained" onClick ={() => onAdd(count)}>Add to Cart</Button></div>
+            <div><Button variant="contained" >Finalizar compra</Button></div>
         </div>
       
     </div>

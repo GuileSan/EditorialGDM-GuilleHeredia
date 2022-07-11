@@ -3,14 +3,15 @@ import './App.css';
 import ItemCount from './components/itemCount/ItemCount';
 import ItemListContainer from './components/itemsListContainer/ItemListContainer';
 import Navbar from './components/NavBar/Navbar';
-import ItemDetail from './components/ItemDetail/ItemDetail';
 import{BrowserRouter, Routes, Route} from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import FilterCategory from './components/FilterCategory/FilterCategory'
+import { useContext } from 'react';
+import { MyCartContext } from './Context/CartContext';
+
+
 
 function App() {
-  // let initial = 1;
-  // let stock = 8;
+//const {cantCart, cart, addItem, removeItem, clear, precioTotal} = useContext(MyCartContext);
 
  
   return (

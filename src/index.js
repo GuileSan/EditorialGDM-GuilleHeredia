@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MyCartContext } from './Context/CartContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  
+  <MyCartContext>
     <App />
-  </React.StrictMode>
+  </MyCartContext>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
