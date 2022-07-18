@@ -15,12 +15,14 @@ export default function Item({id, price, title, pictureURL}) {
       <div className="tarjeta">
         <Card sx={{ maxWidth: '350px', maxHeigth: '600px'}}>
           <CardActionArea>
+            <Link to={`/item/${id}`}>
             <CardMedia
               component="img"
               height="100%"
               image= {pictureURL}
               alt={title}
             />
+            </Link>
             <CardContent>
               <Typography gutterBottom variant="h4" component="div">
                 {title}
@@ -32,7 +34,6 @@ export default function Item({id, price, title, pictureURL}) {
                 {price}
               </Typography>
             </CardContent>
-            <Link to={`/item/${id}`}><Button variant="outlined">Detalle</Button></Link>
           </CardActionArea>
         </Card>
       </div>

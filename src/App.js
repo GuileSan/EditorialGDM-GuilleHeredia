@@ -1,11 +1,9 @@
 
 import './App.css';
-import ItemCount from './components/itemCount/ItemCount';
 import ItemListContainer from './components/itemsListContainer/ItemListContainer';
 import Navbar from './components/NavBar/Navbar';
 import{BrowserRouter, Routes, Route} from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { useContext } from 'react';
 import Cart from './components/Cart/Cart';
 
 
